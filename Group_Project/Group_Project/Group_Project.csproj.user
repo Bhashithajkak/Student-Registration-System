@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AddminMainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddStudent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminLoggedWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EdditResults.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Moduels.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserLoggedWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddminMainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddStudent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminLoggedWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EdditResults.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Moduels.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserLoggedWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

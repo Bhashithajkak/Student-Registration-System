@@ -1,0 +1,222 @@
+﻿<Window x:Class="Group_Project.UserLoggedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group_Project.ViewModel"
+        xmlns:local1="clr-namespace:Group_Project.ViewModel"
+        
+         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="UserLoggedWindow" Height="450" Width="800"
+    WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <local1:UserLoggedWindowVM/>
+    </Window.DataContext>
+    <Border CornerRadius="15"
+            BorderThickness="5"
+            >
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34Ae" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#060531" Offset="0"/>
+                <GradientStop Color="#181448" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            
+            
+            
+            
+
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="15 0 0 15">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                        <GradientStop Color="RoyalBlue" Offset="0"/>
+                        <GradientStop Color="#623ed0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+
+
+                <Grid>
+
+
+                    <Canvas >
+                        <Polygon Points="0,20,100,140,0,270" Fill="#623ed0"/>
+                        <Polygon Points="200,40,50,0,300,400" Fill="#623ed0"/>
+
+
+                        <Polygon Points="90,400,180,350,160,420" Fill="RoyalBlue"/>
+                        <Ellipse Margin="170 410 0 0" Width="20" Height="20" Fill="RoyalBlue"/>
+                        <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="RoyalBlue"/>
+                    </Canvas>
+
+
+
+
+                    <DockPanel>
+                        <Border Width="80" Height="80" Padding="3" Background="White" 
+                            CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 10 0 0">
+                            <Ellipse>
+
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/Images/student2.png"/>
+
+
+                                </Ellipse.Fill>
+
+                            </Ellipse>
+                        </Border>
+                        <TextBlock Text="Student Information" Foreground="White" FontSize="15" FontWeight="SemiBold"
+                               DockPanel.Dock="Top" TextAlignment="Center" Margin="0 0 0 0"/>
+
+                        <Separator Margin="25" DockPanel.Dock="Top" Height="10" Background="#7e5fdc"/>
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button Style="{StaticResource menuButton}" Background="DarkGreen" Foreground="White" >
+                                <StackPanel Orientation="Horizontal" >
+                                    <Icon:PackIconMaterial Kind="AccountMultiplePlusOutline" Style="{StaticResource menuButtonIcon}" />
+                                    <TextBlock Text="Students" FontSize="17" Foreground="White"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}" Command="{Binding AddStudentCommand }" >
+                                <StackPanel Orientation="Horizontal" >
+                                    <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource menuButtonIcon}" />
+                                    <TextBlock Text="Add Student" FontSize="17" Foreground="White" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}" Command="{Binding ModifyStudentCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Edit student" FontSize="17" Foreground="White" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}" Command="{Binding Delete_studentCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Delete Student" FontSize="17" Foreground="White"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}" Command="{Binding ViewResultsCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="BookAccountOutline" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Results" FontSize="17" Foreground="White"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            <Button  x:Name="BackToLoggin"  Style="{StaticResource menuButton}" Click="BackToLoggin_Click"  >
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="BackspaceReverse" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Back" FontSize="17" Foreground="White"/>
+                                </StackPanel>
+
+                            </Button>
+
+
+
+
+
+                        </StackPanel>
+
+
+                        
+
+
+
+
+
+                    </DockPanel>
+                    
+                    
+
+                   
+                </Grid>
+
+            </Border>
+
+            <Border Grid.Column="1" Background="#ffffff" CornerRadius="0 15 15 0">
+
+                <StackPanel>
+
+                    <Button x:Name="BtnClose" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10 10" Style="{StaticResource Close1_Button}" Click="BtnClose_Click"/>
+
+
+                    <Button x:Name="BtnMinimize" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Margin="50 -35" Style="{StaticResource Minimize1_Button}"  Click="BtnMinimize_Click"/>
+
+
+                    <TextBlock Text="Student List"
+                           Margin="0"
+                           FontSize="25"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="#FFBD72F4"
+                           FontWeight="Bold"/>
+
+
+
+
+
+                    <DataGrid ItemsSource="{Binding Students}" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" x:Name="Listview"  Margin="20 20 20 40 " Background="LightGoldenrodYellow"  Height="300"
+                     SelectedItem="{Binding SelectedStudent, UpdateSourceTrigger=PropertyChanged}">
+                        <DataGrid.Columns>
+
+
+
+
+                            <DataGridTextColumn  Header="ID"  IsReadOnly="True" Width="auto" Binding="{Binding StudentId}" FontSize="16" />
+                            <DataGridTextColumn Header="Firstname"  IsReadOnly="True" Width="auto" Binding="{Binding FirstName}" FontSize="16" />
+                            <DataGridTextColumn Header="Lastname" IsReadOnly="True" Width="auto" Binding="{Binding LastName}" FontSize="16" />
+                            <DataGridTextColumn Header="Gender" IsReadOnly="True" Width="auto" Binding="{Binding Gender}" FontSize="16" />
+                            <DataGridTextColumn Header="Address" IsReadOnly="True" Width="auto" Binding="{Binding Address}" FontSize="16" />
+                            <DataGridTextColumn Header="Age" IsReadOnly="True" Width="auto" Binding="{Binding Age}" FontSize="16" />
+                            <DataGridTextColumn Header="Date of Birth" IsReadOnly="True" Width="auto" Binding="{Binding DateOfBirth}" FontSize="16" />
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+
+
+                 
+                </StackPanel>
+               
+
+            </Border>
+
+
+
+           
+        </Grid>
+    </Border>
+
+
+</Window>
+

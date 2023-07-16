@@ -1,0 +1,293 @@
+﻿<Window x:Class="Group_Project.Moduels"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group_Project.ViewModel"
+        xmlns:local1="clr-namespace:Group_Project.ViewModel"
+        mc:Ignorable="d"
+        Title="Moduels" Height="600" Width="800"
+        
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Window.DataContext>
+        <local1:ModulesVM/>
+    </Window.DataContext>
+
+    <Border CornerRadius="15"
+            BorderThickness="5"
+            >
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34Ae" Offset="0.417"/>
+                <GradientStop Color="#8A16C1" Offset="0.777"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="Gray" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="15 0 0 15">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="white" Offset="1"/>
+                        <GradientStop  Color="White" Offset="2"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+
+
+                <Grid>
+
+
+
+
+
+
+
+
+                    <DockPanel>
+                        <Border Width="120" Height="120" Padding="3" Background="White" 
+                            CornerRadius="100" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 100 0 0">
+                            <Ellipse>
+
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/Images/20.jpg"/>
+
+
+                                </Ellipse.Fill>
+
+                            </Ellipse>
+                        </Border>
+
+
+                        <TextBlock Text="STUDENT RESULT" Foreground="Black" FontSize="25" FontWeight="SemiBold"
+                               DockPanel.Dock="Top" TextAlignment="Center" Margin="10 40"/>
+
+                        <Button Height="50"  Width="100" DockPanel.Dock="Top" Margin="0 20" Content=" Edit Results" Command="{Binding Eddit_ResultsCommand}"/>
+
+
+
+
+
+
+
+
+
+
+
+                    </DockPanel>
+
+                    
+                </Grid>
+
+            </Border>
+
+
+
+            <Border Grid.Column="1" Background="black" CornerRadius="0 15 15 0">
+                
+                
+
+
+
+
+
+
+                <StackPanel  >
+
+
+                    <Button x:Name="BtnClose" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10 10" Style="{StaticResource Close_Button}" Click="BtnClose_Click"/>
+                    <TextBlock Text="Student ID" Foreground="White" Margin="20 10" />
+                    <TextBox Text="{Binding StudentId}" IsReadOnly="True" Margin="40 0"/>
+                    <TextBlock Foreground="White" Margin="20 10" Text="Student Name"/>
+                    <TextBox Text="{Binding Name}" IsReadOnly="True" Margin="40 0"/>
+
+
+                    <TextBlock Text="Results" Margin="20 20" Foreground="White"/>
+
+
+
+
+
+
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions >
+                        <StackPanel Grid.Column="0">
+                            <TextBlock FontSize="15"  Text="GUI Programming" Foreground="White" Margin="40 10"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Margin="0 10" FontSize="18" Foreground="White" Text="{Binding Ee1}"/>
+
+                        </StackPanel>
+                    </Grid>
+
+
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions >
+                        <StackPanel Grid.Column="0">
+
+                            <TextBlock  Foreground="White" Margin="40 10" FontSize="18" Text="Programing Project"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+
+                            <TextBlock  Margin="0 10" FontSize="18"  Foreground="White" Text="{Binding Ee2}"/>
+
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions >
+                        <StackPanel Grid.Column="0">
+
+                            <TextBlock Foreground="White" Margin="40 10" FontSize="18" Text="Electrical and Measurement"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+
+                            <TextBlock Margin="0 10"  FontSize="18" Foreground="White" Text="{Binding Ee3}"/>
+
+                        </StackPanel>
+                    </Grid>
+
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions >
+                        <StackPanel Grid.Column="0">
+
+                            <TextBlock Foreground="White" Margin="40 10" FontSize="18" Text="Data Stuctures"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+
+                            <TextBlock Margin="0 10"  FontSize="18" Foreground="White" Text="{Binding Ee4}"/>
+
+                        </StackPanel>
+                    </Grid>
+
+
+
+
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions >
+                        <StackPanel Grid.Column="0">
+
+                            <TextBlock Foreground="White" Margin="40 10" FontSize="18" Text="Signals And Systems"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+
+                            <TextBlock Margin="0 10"  FontSize="18" Foreground="White" Text="{Binding Ee5}"/>
+
+                        </StackPanel>
+                    </Grid>
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions >
+                        <StackPanel Grid.Column="0">
+
+                            <TextBlock Foreground="White" Margin="40 10" FontSize="18" Text="Analog Electronics"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+
+                            <TextBlock Margin="0 10"  FontSize="18"  Foreground="White" Text="{Binding Ee6}"/>
+                        </StackPanel>
+                    </Grid>
+
+
+
+
+
+
+
+
+                    <TextBlock Foreground="White" Margin="20 20" Text="GPA value: "/>
+                    <TextBox Text="{Binding Gpa}" IsReadOnly="True" Margin="40 0"  HorizontalAlignment="Left" Width="100"/>
+                   
+                </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </Border>
+
+
+
+
+
+
+
+
+
+
+
+           
+
+        </Grid>
+    </Border>
+
+
+
+
+
+
+   
+</Window>
